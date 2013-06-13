@@ -1131,14 +1131,11 @@ public void updateModel(){
                       JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            else{
-            	server.addPerson(addNameText.getText(),maskRadio.isSelected());
-                addNameText.setText("");
-                maskRadio.setSelected(true);
-                server.serialOs();
-            }
         }
-        
+    	server.addPerson(name,maskRadio.isSelected());
+        addNameText.setText("");
+        maskRadio.setSelected(true);
+        server.serialOs();
     }//GEN-LAST:event_saveNameBtnActionPerformed
 
     private void savePointBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePointBtnActionPerformed

@@ -63,10 +63,10 @@ public class MyTableModel extends AbstractTableModel{
     }
     
     public void setValueAt(Object value, int row, int col) {
-	data.set(((row*4)+(col-1)),(String)value);
-        server.addPlatz((String)value, row, col-1);
+    	data.set(((row*4)+(col-1)),(String)value);
+    	server.addPlatz((String)value, row, col-1);
         if ((server.getRunde()<=(row+1))&&((row+1)<=server.getRunde()+2)){
-        server.sendLineUp();
+        	server.sendLineUp();
 	}server.serialOs();
     }
     }

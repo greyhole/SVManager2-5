@@ -14,7 +14,6 @@ public class NewJFrame extends javax.swing.JFrame {
     List<String> tableList=new ArrayList<String>(800);
 
     public NewJFrame() {
-        
         initComponents();
     }
 
@@ -147,8 +146,8 @@ public class NewJFrame extends javax.swing.JFrame {
         mainTable.getColumn("Bahn 2").setCellEditor(new CustomCellEditor(tableCombo));
         mainTable.getColumn("Bahn 3").setCellEditor(new CustomCellEditor(tableCombo));
         mainTable.getColumn("Bahn 4").setCellEditor(new CustomCellEditor(tableCombo));
-
         saveNameBtn.setText("Speichern");
+        
         saveNameBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveNameBtnActionPerformed(evt);
@@ -157,7 +156,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         buttonGroup1.add(femRadio);
         femRadio.setText("weiblich");
-
         buttonGroup1.add(maskRadio);
         maskRadio.setSelected(true);
         maskRadio.setText("männlich");
@@ -209,11 +207,8 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         jLabel2.setText("Punkte hinzufügen");
-
         jLabel3.setText("Runde:");
-
         jLabel4.setText("Bahn:");
-
         jLabel5.setText("Punkte:");
 
         savePointBtn.setText("Speichern");
@@ -1072,12 +1067,12 @@ public void updateModel(){
     }//GEN-LAST:event_startServActionPerformed
 
     private void stopServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopServActionPerformed
-        server.stopIt();
+    	server.serialOs();
+    	server.stopIt();
         serverStatLabel.setText("Offline");
         startServ.setEnabled(true);
         stopServ.setEnabled(false);
         jPanel10.repaint();
-        server.serialOs();
         server=new Server();
     }//GEN-LAST:event_stopServActionPerformed
 
@@ -1093,6 +1088,7 @@ public void updateModel(){
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
     	server.serialOs();
+    	server.stopIt();
     	System.exit( 0 );
     }//GEN-LAST:event_exitBtnActionPerformed
 

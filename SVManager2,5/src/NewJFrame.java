@@ -1077,8 +1077,8 @@ public void updateModel(){
         startServ.setEnabled(true);
         stopServ.setEnabled(false);
         jPanel10.repaint();
-        server=new Server();
         server.serialOs();
+        server=new Server();
     }//GEN-LAST:event_stopServActionPerformed
 
     private void delPointCheckBoxLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delPointCheckBoxLActionPerformed

@@ -16,15 +16,15 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class Server extends Thread {
-        private NewJFrame frame;
+    private NewJFrame frame;
 	private ServerSocket ss;
 	private int port;
-        private int runde;
-        private Hashtable oOutputStreams= new Hashtable();
+    private int runde;
+    private Hashtable oOutputStreams= new Hashtable();
 	private List<Index> game= new ArrayList<Index>(800);
-        private List<Person> personen= new ArrayList<Person>(50);
-        private Socket s;
-        private ObjectOutputStream oout;
+    private List<Person> personen= new ArrayList<Person>(50);
+    private Socket s;
+    private ObjectOutputStream oout;
         
         
         public Server(){ 
@@ -351,10 +351,10 @@ public class Server extends Thread {
     	   {
     		   fis = new FileInputStream( "Serialisierung" );
     		   ObjectInputStream o = new ObjectInputStream( fis );
-    	  game= (ArrayList<Index>) o.readObject();
-    	  personen= (ArrayList<Person>) o.readObject();
+    	  this.game= (ArrayList<Index>) o.readObject();
+    	  this.personen= (ArrayList<Person>) o.readObject();
     	  List<String> tmpList=new ArrayList<String>(800);
-    	  for(Index tmp:game)tmpList.add(tmp.getPerson());
+    	  for(Index tmp:this.game)tmpList.add(tmp.getPerson());
     	  frame.chMainTable(tmpList);
     	  frame.updateModel();
     	  this.sendLineUp();

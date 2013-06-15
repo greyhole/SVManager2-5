@@ -1088,7 +1088,6 @@ public void updateModel(){
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
     	server.serialOs();
-    	server.stopIt();
     	System.exit( 0 );
     }//GEN-LAST:event_exitBtnActionPerformed
 
